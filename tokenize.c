@@ -16,6 +16,7 @@ void tokenize_command(char *command)
 			words++;
 		idx++;
 	}
+	/*command[idx] = '\0';*/
 
 	cmd_list = malloc(sizeof(char *) * (words + 1));
 	
@@ -38,5 +39,24 @@ void tokenize_command(char *command)
 		}
 		idx++;
 	}
-	printf("TOKENIZED!\n");
+
+	idx = 0;
+	if (words == 1)
+        {
+                while (1)
+                {
+                        if(cmd_list[0][idx] == '\0')
+                        {
+                                break;
+                        }
+			if (cmd_list[0][idx] == '\n')
+			{
+				cmd_list[0][idx] = '\0';
+			}
+			/*printf("%c\n: %i\n", cmd_list[0][idx], strcmp("push", cmd_list[0]));*/
+			idx++;
+                }
+
+        }
+
 }

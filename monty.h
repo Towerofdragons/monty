@@ -49,7 +49,10 @@ extern char **cmd_list;
 FILE *get_stream(char *filename);
 void tokenize_command(char *command);
 void function_select(stack_t **stack, int line_number);
+
+void pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void push(stack_t **stack, unsigned int line_number);
+
 /*Fail functions*/
 void malloc_fail(void);
 #endif

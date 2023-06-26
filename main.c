@@ -15,8 +15,9 @@ int main(int argc, char **argv)
 	stack_t **stack;
 	size_t buff_size = BUFF_SIZE;
 	int read;
-	int i;
 	int line;
+
+	/*int i;*/
 
 	stack_t *head;
 
@@ -39,15 +40,15 @@ int main(int argc, char **argv)
 			printf("EOF\n");
 			break;
 		}
-		printf("This line is:\n %s\n", command);
+	/*printf("This line is:\n %s\n", command);*/
 
 		tokenize_command(command);
-		i = 0;
+		/*i = 0;
 		while (cmd_list[i] != NULL)
 		{
 			printf("%s\n",cmd_list[i]);
 			i++;
-		}
+		}*/
 
 		function_select(stack, line);
 		line++;
